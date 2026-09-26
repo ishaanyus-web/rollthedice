@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-Sided Dice Roller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        #dice {
+            font-size: 80px;
+            font-weight: bold;
+            margin: 20px;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border: 4px solid #333;
+            border-radius: 15px;
+            display: inline-block;
+            background: #fff;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Roll the Die!</h1>
+    <div id="dice">?</div>
+    <br>
+    <button onclick="rollDice()">Roll</button>
+</div>
+
+<script>
+    function rollDice() {
+        const diceElement = document.getElementById("dice");
+        
+        // Generate a random number between 1 and 6
+        const result = Math.floor(Math.random() * 6) + 1;
+        
+        // Update the display
+        diceElement.innerText = result;
+    }
+</script>
+
+</body>
+</html>
